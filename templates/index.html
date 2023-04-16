@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="main-container">
+      <div align="center">
+    <h1 class="title">Hi {{session.username}}!<br> Welcome to Baby Steps! <br> <br> </h1>
+      </div>
+    <div>
+      <div class="box">
+        <a class="button is-info" href="/practice">practice</a>
+        <p>practice writing the alphabet</p>
+      </div>
+      <div class="box">
+        <a class="button is-info" href="/add-data">add data</a>
+        <p>improve the model by adding data</p>
+      </div>
+    </div>
+  </div>
+<div align="center">
+          <div align="center" class="border">
+              <br> <br>
+                <a href="{{ url_for('logout') }}" class="btn">Logout</a>
+          </div>
+        </div>
+
+
+
+{% endblock %}
