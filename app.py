@@ -196,7 +196,7 @@ def watchTutorial():
 @app.route('/videoA')
 def videoA():
     session.clear()
-    return flask.send_file("templates/atutorial.mp4")
+    return flask.send_file("templates/videos/atutorial.mp4")
 
 
 if __name__ == '__main__':

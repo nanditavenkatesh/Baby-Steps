@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+        <meta charset="UTF-8">
+        <title> Tutorial </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <br><br><br><br><br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Tutorial</h1>
+             </div><br>
+            <body>
+                <a href = "{{url_for('videoA')}}"> A </a>
+            </body>
+
+            <p class="bottom">Back to main?  <a class="bottom" href="{{url_for('index')}}"> Back</a></p>
+          </div>
+        </div>
+
+</html>
