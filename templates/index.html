@@ -1,28 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div class="main-container">
-      <div align="center">
-    <h1 class="title">Hi {{session.username}}!<br> Welcome to Baby Steps! <br> <br> </h1>
-      </div>
-    <div>
-      <div class="box">
-        <a class="button is-info" href="/practice">practice</a>
-        <p>practice writing the alphabet</p>
-      </div>
-      <div class="box">
-        <a class="button is-info" href="/add-data">add data</a>
-        <p>improve the model by adding data</p>
-      </div>
-    </div>
-  </div>
-<div align="center">
-          <div align="center" class="border">
-              <br> <br>
-                <a href="{{ url_for('logout') }}" class="btn">Logout</a>
-          </div>
-        </div>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
+  <div align = "right">
+          <a href="{{ url_for('logout') }}" class="word">Logout</a>
+  </div>
+      <div align="center">
+               <div align="center" class="canvasborder">
+                    <h1 class="word">hi {{session.username}}!<br> welcome to baby steps! </h1>
+
+                 <br>
+    <div>
+          <a class="btn" href="/practice">practice</a>
+           <p class = "word"> practice writing the alphabet</p> <br> <br>
+
+          <a class="btn" href="/add-data">add data</a>
+           <p class = "word" > improve the model by adding data</p> <br> <br>
+
+         <a class = "btn" href="/watch-tutorial">watch tutorial</a>
+         <p class = "word" > learn how to write uppercase alphabets </p> <br> <br>
+
+        <a class = "btn" href="/attempt-quiz">attempt quiz</a>
+        <p class = "word" > take a quiz to see how much you know </p>
+
+    </div>
+               </div>
+      </div>
 
 
 {% endblock %}

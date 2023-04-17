@@ -124,3 +124,10 @@ function practiceAction() {
   document.getElementById("pixels").value = pixels
   document.getElementById("practice-form").submit()
 }
+
+function quizAction() {
+  let pixels = getPixels()
+  document.getElementById("pixels").value = pixels
+  document.getElementById("quiz-form").submit()
+
+}
