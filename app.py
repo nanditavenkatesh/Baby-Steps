@@ -1,3 +1,4 @@
+import flask
 import numpy as np
 from bidict import bidict
 from flask import (
@@ -12,6 +13,9 @@ import re
 
 import password
 
+global quiz
+
+
 ENCODER = bidict({
     'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6,
     'G': 7, 'H': 8, 'I': 9, 'J': 10, 'K': 11, 'L': 12,
@@ -22,6 +26,8 @@ ENCODER = bidict({
 
 app = Flask(__name__)
 app.secret_key = 'alphabet_quiz'
+app.logger = 0
+app.aborter = 0
 
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
@@ -54,7 +60,6 @@ def login():
         else:
             msg = 'Incorrect username / password !'
     return render_template('login.html', msg=msg)
-
 
 @app.route('/logout')
 def logout():
@@ -155,20 +160,43 @@ def quiz_get():
 
 @app.route('/attempt-quiz', methods=['POST'])
 def quiz_post():
-    letter = request.form['letter']
-    pixels = request.form['pixels']
-    pixels = pixels.split(',')
-    img = np.array(pixels).astype(float).reshape(1, 50, 50, 1)
+    if app.logger < 4:
+        letter = request.form['letter']
+        pixels = request.form['pixels']
+        pixels = pixels.split(',')
+        img = np.array(pixels).astype(float).reshape(1, 50, 50, 1)
 
-    model = keras.models.load_model('letter.model')
+        model = keras.models.load_model('letter.model')
 
-    pred_letter = np.argmax(model.predict(img), axis=-1)
-    pred_letter = ENCODER.inverse[pred_letter[0]]
+        pred_letter = np.argmax(model.predict(img), axis=-1)
+        pred_letter = ENCODER.inverse[pred_letter[0]]
 
-    correct = 'yes' if pred_letter == letter else 'no'
-    letter = choice(list(ENCODER.keys()))
+        correct = 'yes' if pred_letter == letter else 'no'
+        if correct == "yes":
+            app.aborter += 1
+        letter = choice(list(ENCODER.keys()))
+        app.logger += 1
+        return render_template("attemptQuiz.html", letter=letter, correct=correct)
+    else:
+        msg = "Score is " + str(app.aborter)
+        app.logger = 0
+        app.aborter = 0
+        return render_template('score.html', msg=msg)
 
-    return render_template("attemptQuiz.html", letter=letter, correct=correct)
+# @app.route('/score', methods=['GET'])
+# def login(msg):
+#     msg = 'Incorrect username / password !'
+#     return render_template('login.html', msg=msg)
+
+@app.route('/watch-tutorial')
+def watchTutorial():
+    session.clear()
+    return render_template("watchtutorial.html")
+
+@app.route('/videoA')
+def videoA():
+    session.clear()
+    return flask.send_file("templates/atutorial.mp4")
 
 
 if __name__ == '__main__':
