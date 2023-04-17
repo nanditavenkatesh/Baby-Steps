@@ -198,6 +198,130 @@ def videoA():
     session.clear()
     return flask.send_file("templates/videos/atutorial.mp4")
 
+@app.route('/videoB')
+def videoB():
+    session.clear()
+    return flask.send_file("templates/videos/btutorial.mp4")
+
+@app.route('/videoC')
+def videoC():
+    session.clear()
+    return flask.send_file("templates/videos/ctutorial.mp4")
+
+@app.route('/videoD')
+def videoD():
+    session.clear()
+    return flask.send_file("templates/videos/dtutorial.mp4")
+
+@app.route('/videoE')
+def videoE():
+    session.clear()
+    return flask.send_file("templates/videos/etutorial.mp4")
+
+@app.route('/videoF')
+def videoF():
+    session.clear()
+    return flask.send_file("templates/videos/ftutorial.mp4")
+
+@app.route('/videoG')
+def videoG():
+    session.clear()
+    return flask.send_file("templates/videos/gtutorial.mp4")
+
+@app.route('/videoH')
+def videoH():
+    session.clear()
+    return flask.send_file("templates/videos/htutorial.mp4")
+
+@app.route('/videoI')
+def videoI():
+    session.clear()
+    return flask.send_file("templates/videos/itutorial.mp4")
+
+@app.route('/videoJ')
+def videoJ():
+    session.clear()
+    return flask.send_file("templates/videos/jtutorial.mp4")
+
+@app.route('/videoK')
+def videoK():
+    session.clear()
+    return flask.send_file("templates/videos/ktutorial.mp4")
+
+@app.route('/videoL')
+def videoL():
+    session.clear()
+    return flask.send_file("templates/videos/ltutorial.mp4")
+
+@app.route('/videoM')
+def videoM():
+    session.clear()
+    return flask.send_file("templates/videos/mtutorial.mp4")
+
+@app.route('/videoN')
+def videoN():
+    session.clear()
+    return flask.send_file("templates/videos/ntutorial.mp4")
+
+@app.route('/videoO')
+def videoO():
+    session.clear()
+    return flask.send_file("templates/videos/otutorial.mp4")
+
+@app.route('/videoP')
+def videoP():
+    session.clear()
+    return flask.send_file("templates/videos/ptutorial.mp4")
+
+@app.route('/videoQ')
+def videoQ():
+    session.clear()
+    return flask.send_file("templates/videos/qtutorial.mp4")
+
+@app.route('/videoR')
+def videoR():
+    session.clear()
+    return flask.send_file("templates/videos/rtutorial.mp4")
+
+@app.route('/videoS')
+def videoS():
+    session.clear()
+    return flask.send_file("templates/videos/stutorial.mp4")
+
+@app.route('/videoT')
+def videoT():
+    session.clear()
+    return flask.send_file("templates/videos/ttutorial.mp4")
+
+@app.route('/videoU')
+def videoU():
+    session.clear()
+    return flask.send_file("templates/videos/ututorial.mp4")
+
+@app.route('/videoV')
+def videoV():
+    session.clear()
+    return flask.send_file("templates/videos/vtutorial.mp4")
+
+@app.route('/videoW')
+def videoW():
+    session.clear()
+    return flask.send_file("templates/videos/wtutorial.mp4")
+
+@app.route('/videoX')
+def videoX():
+    session.clear()
+    return flask.send_file("templates/videos/xtutorial.mp4")
+
+@app.route('/videoY')
+def videoY():
+    session.clear()
+    return flask.send_file("templates/videos/ytutorial.mp4")
+
+@app.route('/videoZ')
+def videoZ():
+    session.clear()
+    return flask.send_file("templates/videos/ztutorial.mp4")
 
 if __name__ == '__main__':
     app.run(debug=True)
