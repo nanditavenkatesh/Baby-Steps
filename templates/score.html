@@ -1,21 +1,37 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block content %}
 <html lang="en">
- <head>
+    <head>
         <meta charset="UTF-8">
-        <title> Tutorial </title>
+        <title>Score</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <body><br><br><br><br><br>
-        <div align="center">
-          <div align="center" class="border">
-             <div class="header">
-                <h1 class="word">Score</h1>
-             </div><br>
-            <h2 class="word">
-                  <div class="msg">{{ msg }}</div>
-            </h2>
-            <p class="bottom">Back to main?  <a class="bottom" href="{{url_for('index')}}"> Back</a></p>
-          </div>
-        </div>
+        </head>
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-two-thirds">
+                        <div class="box">
+                            <div class="has-text-centered">
+                                <h1 class="title">Score</h1>
+                            </div>
+                            <div class="has-text-centered">
+                                <h2 class="subtitle">{{ msg }}</h2>
+                            </div>
+                            <br>
+                            <div class="buttons is-centered">
+                                <div class="field is-grouped is-grouped-multiline">
+                                    <div class="control">
+                                        <a href="/" class="button is-primary is-outlined">&lt;return to main menu</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </body>
 </html>
+{% endblock %}
