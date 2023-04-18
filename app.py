@@ -13,8 +13,6 @@ import re
 
 import password
 
-global quiz
-
 
 ENCODER = bidict({
     'A': 1, 'B': 2, 'C': 3, 'D': 4, 'E': 5, 'F': 6,
@@ -38,7 +36,6 @@ mysql = MySQL(app)
 
 @app.route('/')
 def index():
-    session.clear()
     return render_template("index.html")
 
 
@@ -55,6 +52,7 @@ def login():
             session['loggedin'] = True
             session['id'] = account['id']
             session['username'] = account['username']
+            session['role'] = account['role']
             msg = 'Logged in successfully !'
             return render_template('index.html', msg=msg)
         else:
@@ -66,6 +64,7 @@ def logout():
     session.pop('loggedin', None)
     session.pop('id', None)
     session.pop('username', None)
+    session.pop('role', None)
     return redirect(url_for('login'))
 
 
@@ -76,6 +75,7 @@ def register():
         username = request.form['username']
         password = request.form['password']
         email = request.form['email']
+        default_role = 'user'  # set default role value for new user
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM accounts WHERE username = % s', (username,))
         account = cursor.fetchone()
@@ -88,12 +88,13 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form !'
         else:
-            cursor.execute('INSERT INTO accounts VALUES (NULL, % s, % s, % s)', (username, password, email,))
+            cursor.execute('INSERT INTO accounts (username, password, email, role) VALUES (% s, % s, % s, % s)', (username, password, email, default_role,))
             mysql.connection.commit()
             msg = 'You have successfully registered !'
     elif request.method == 'POST':
         msg = 'Please fill out the form !'
     return render_template('register.html', msg=msg)
+
 
 
 @app.route('/add-data', methods=['GET'])

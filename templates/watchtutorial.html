@@ -1,47 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-        <meta charset="UTF-8">
-        <title> Tutorial </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    </head>
-    <br><br><br><br><br>
-        <div align="center">
-          <div align="center" class="border">
-             <div class="header">
-                <h1 class="word">Tutorial</h1>
-             </div><br>
-            <body>
-                <a href = "{{url_for('videoA')}}"> A </a>
-                <a href = "{{url_for('videoB')}}"> B </a>
-                <a href = "{{url_for('videoC')}}"> C </a>
-                <a href = "{{url_for('videoD')}}"> D </a>
-                <a href = "{{url_for('videoE')}}"> E </a>
-                <a href = "{{url_for('videoF')}}"> F </a>
-                <a href = "{{url_for('videoG')}}"> G </a>
-                <a href = "{{url_for('videoH')}}"> H </a>
-                <a href = "{{url_for('videoI')}}"> I </a>
-                <a href = "{{url_for('videoJ')}}"> J </a>
-                <a href = "{{url_for('videoK')}}"> K </a>
-                <a href = "{{url_for('videoL')}}"> L </a>
-                <a href = "{{url_for('videoM')}}"> M </a>
-                <a href = "{{url_for('videoN')}}"> N </a>
-                <a href = "{{url_for('videoO')}}"> O </a>
-                <a href = "{{url_for('videoP')}}"> P </a>
-                <a href = "{{url_for('videoQ')}}"> Q </a>
-                <a href = "{{url_for('videoR')}}"> R </a>
-                <a href = "{{url_for('videoS')}}"> S </a>
-                <a href = "{{url_for('videoT')}}"> T </a>
-                <a href = "{{url_for('videoU')}}"> U </a>
-                <a href = "{{url_for('videoV')}}"> V </a>
-                <a href = "{{url_for('videoW')}}"> W </a>
-                <a href = "{{url_for('videoX')}}"> X </a>
-                <a href = "{{url_for('videoY')}}"> Y </a>
-                <a href = "{{url_for('videoZ')}}"> Z </a>
-            </body>
+{% extends "base.html" %}
 
-            <p class="bottom">Back to main?  <a class="bottom" href="{{url_for('index')}}"> Back</a></p>
+{% block content %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.css') }}">
+</head>
+
+<p  align = "right">
+        <a href="{{ url_for('index') }}" class="button is-primary is-outlined">&lt; return to main menu</a>
+      </p>
+<br>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <h1 class="title has-text-centered">tutorial</h1>
+      <div class="box">
+        <div class="buttons is-centered">
+          <div class="buttons is-centered">
+            <a href="{{ url_for('videoA') }}" class="button is-link">A</a>
+            <a href="{{ url_for('videoB') }}" class="button is-link">B</a>
+            <a href="{{ url_for('videoC') }}" class="button is-link">C</a>
+            <a href="{{ url_for('videoD') }}" class="button is-link">D</a>
+            <a href="{{ url_for('videoE') }}" class="button is-link">E</a>
+            <a href="{{ url_for('videoF') }}" class="button is-link">F</a>
+            <a href="{{ url_for('videoG') }}" class="button is-link">G</a>
+            <a href="{{ url_for('videoH') }}" class="button is-link">H</a>
+            <a href="{{ url_for('videoI') }}" class="button is-link">I</a>
+            <a href="{{ url_for('videoJ') }}" class="button is-link">J</a>
+            <a href="{{ url_for('videoK') }}" class="button is-link">K</a>
+            <a href="{{ url_for('videoL') }}" class="button is-link">L</a>
+            <a href="{{ url_for('videoM') }}" class="button is-link">M</a>
+            <a href="{{ url_for('videoN') }}" class="button is-link">N</a>
+            <a href="{{ url_for('videoO') }}" class="button is-link">O</a>
+            <a href="{{ url_for('videoP') }}" class="button is-link">P</a>
+            <a href="{{ url_for('videoQ') }}" class="button is-link">Q</a>
+            <a href="{{ url_for('videoR') }}" class="button is-link">R</a>
+            <a href="{{ url_for('videoS') }}" class="button is-link">S</a>
+            <a href="{{ url_for('videoT') }}" class="button is-link">T</a>
+            <a href="{{ url_for('videoU') }}" class="button is-link">U</a>
+            <a href="{{ url_for('videoV') }}" class="button is-link">V</a>
+            <a href="{{ url_for('videoW') }}" class="button is-link">W</a>
+            <a href="{{ url_for('videoX') }}" class="button is-link">X</a>
+            <a href="{{ url_for('videoY') }}" class="button is-link">Y</a>
+            <a href="{{ url_for('videoZ') }}" class="button is-link">Z</a>
           </div>
         </div>
-
-</html>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

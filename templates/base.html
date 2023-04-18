@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alphabet Quiz</title>
+    <title>Baby Steps</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
 
@@ -11,7 +11,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bulma.css') }}">
 
 
   </head>
@@ -19,9 +19,9 @@
     <nav class="navbar" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="logo.png" alt="Logo">
-          <h1 class="title">Alphabet Quiz</h1>
+          <h1 class="title">Baby Steps</h1>
         </a>
+
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
@@ -31,25 +31,29 @@
 
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
-          <a class="navbar-item" href="#">Home</a>
-          <a class="navbar-item" href="#">Practice</a>
-          <a class="navbar-item" href="#">Watch tutorial</a>
+          <a class="navbar-item" href="/">Home</a>
+          <a class="navbar-item" href="/practice">Practice</a>
+          <a class="navbar-item" href="/watch-tutorial">Watch tutorial</a>
+          <a class="navbar-item" href="/attempt-quiz">Quiz</a>
         </div>
+
 
         <div class="navbar-end">
           <!-- Add any necessary buttons or links here -->
         </div>
       </div>
     </nav>
-
     <div class="container">
       {% block content %}{% endblock %}
     </div>
+ <div>
+            <a href="{{ url_for('logout') }}" class="button is-primary is-outlined">Logout</a>
+          </div>
 
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          Made with <i class="fas fa-heart"></i> OOD Team-5
+          Made with <span style="font-size:125%;color:pink;">&hearts;</span> by OOD Team-5
         </p>
       </div>
     </footer>
