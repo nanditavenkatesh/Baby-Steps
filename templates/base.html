@@ -3,19 +3,55 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>alphabet quiz</title>
+    <title>Alphabet Quiz</title>
 
-    <!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">-->
-    <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">-->
     <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+
+    <!-- Add any other necessary CSS links here -->
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='index.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+
 
   </head>
   <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <img src="logo.png" alt="Logo">
+          <h1 class="title">Alphabet Quiz</h1>
+        </a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
 
-    {% block content %}{% endblock %}
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="#">Home</a>
+          <a class="navbar-item" href="#">Practice</a>
+          <a class="navbar-item" href="#">Watch tutorial</a>
+        </div>
 
+        <div class="navbar-end">
+          <!-- Add any necessary buttons or links here -->
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      {% block content %}{% endblock %}
+    </div>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          Made with <i class="fas fa-heart"></i> OOD Team-5
+        </p>
+      </div>
+    </footer>
   </body>
-</html>>
+</html>

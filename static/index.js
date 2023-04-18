@@ -41,13 +41,11 @@ function startCanvas() {
 
   $('#canvas').mousedown(function (e) {
     paint = true
-    addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, false)
-    drawCanvas()
-  })
-
+    addClick(e.pageX - this.offsetLeft-100, e.pageY - this.offsetTop-100, false)
+    drawCanvas()})
   $('#canvas').mousemove(function (e) {
     if (paint) {
-      addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true)
+      addClick(e.pageX - this.offsetLeft - 100 , e.pageY - this.offsetTop - 100, true)
       drawCanvas()
     }
   })

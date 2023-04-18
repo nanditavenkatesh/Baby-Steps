@@ -1,0 +1,16 @@
+.baby-pink {
+  background-color: #ffb6c1;
+  border-color: #ffb6c1;
+  color: #fff;
+}
+
+.btn {
+  background-color: #ffb6c1;
+  color: white;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+}

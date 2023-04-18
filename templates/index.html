@@ -1,35 +1,55 @@
 {% extends "base.html" %}
+
 {% block content %}
 
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='color.css') }}">
 </head>
 
-  <div align = "right">
-          <a href="{{ url_for('logout') }}" class="word">Logout</a>
-  </div>
-      <div align="center">
-               <div align="center" class="canvasborder">
-                    <h1 class="word">hi {{session.username}}!<br> welcome to baby steps! </h1>
-
-                 <br>
-    <div>
-          <a class="btn" href="/practice">practice</a>
-           <p class = "word"> practice writing the alphabet</p> <br> <br>
-
-          <a class="btn" href="/add-data">add data</a>
-           <p class = "word" > improve the model by adding data</p> <br> <br>
-
-         <a class = "btn" href="/watch-tutorial">watch tutorial</a>
-         <p class = "word" > learn how to write uppercase alphabets </p> <br> <br>
-
-        <a class = "btn" href="/attempt-quiz">attempt quiz</a>
-        <p class = "word" > take a quiz to see how much you know </p>
-
-
-    </div>
-               </div>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-half">
+      <div class="card">
+        <header class="card-header">
+          <div class="is-flex is-justify-content-space-between is-align-items-center">
+            <h1 class="card-header-title word">Hi {{ session.username }}! Welcome to Baby Steps!</h1>
+            <a href="{{ url_for('logout') }}" class="card-header-icon word">Logout</a>
+          </div>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <div class="buttons is-centered">
+              <a class="button is-primary is-fullwidth btn baby-pink" href="/practice">
+                Practice
+              </a>
+              <p class="word">Practice writing the alphabet</p>
+            </div>
+            <br>
+            <div class="buttons is-centered">
+              <a class="button is-primary is-fullwidth btn baby-pink" href="/add-data">
+                Add Data
+              </a>
+              <p class="word">Improve the model by adding data</p>
+            </div>
+            <br>
+            <div class="buttons is-centered">
+              <a class="button is-primary is-fullwidth btn baby-pink" href="/watch-tutorial">
+                Watch Tutorial
+              </a>
+              <p class="word">Learn how to write uppercase alphabets</p>
+            </div>
+            <br>
+            <div class="buttons is-centered">
+              <a class="button is-primary is-fullwidth btn" href="/attempt-quiz">
+                Attempt Quiz
+              </a>
+              <p class="word">Take a quiz to see how much you know</p>
+            </div>
+          </div>
+        </div>
       </div>
-
+    </div>
+  </div>
+</div>
 
 {% endblock %}

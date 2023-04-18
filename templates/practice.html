@@ -1,48 +1,48 @@
 {% extends "base.html" %}
+
 {% block content %}
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
 
-<head>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+  <div align = "right">
+    <a href="/" class="word">&lt; return to main menu</a>
+  </div> <br>
 
-    <div align = "right">
-       <a href="/" class="word">&lt; return to main menu</a>
-    </div> <br>
-    <div align="center">
-          <div align="center" class="canvasborder">
-              <h1 class="word">practice</h1>
+  <div class="canvas-container">
+    <div align="center" class="canvasborder">
+      <h1 class="word">practice</h1>
 
-             <br>
-    <div>
-      <canvas id="canvas" width="200" height="200"></canvas>
-    </div>
-    <div style="padding: 1rem;">
-      {% if correct %}
-        {% if correct == 'yes' %}
-        <p style="font-size: 0.75rem;">correct! next question:</p>
-        {% else %}
-          <p style="font-size: 0.75rem;">incorrect! next question:</p>
+      <br>
+      <div>
+        <canvas id="canvas" width="200" height="200"></canvas>
+      </div>
+
+      <div style="padding: 1rem;">
+        {% if correct %}
+          {% if correct == 'yes' %}
+            <p style="font-size: 0.75rem;">correct! next question:</p>
+          {% else %}
+            <p style="font-size: 0.75rem;">incorrect! next question:</p>
+          {% endif %}
         {% endif %}
-      {% endif %}
-      <p style="margin-top: 0.5rem;">write an uppercase letter "{{letter.lower()}}"</p>
-    </div>
-    <div>
-      <form id="practice-form" action="practice" method="POST">
-        <input id="pixels" name="pixels" type="hidden" />
-        <input id="letter" name="letter" type="hidden" value="{{letter}}" />
-        <button type="button" class="btn" onclick="practiceAction()">check my answer</button>
-        <button type="button" class="btn" onclick="resetCanvas()">clear</button>
-      </form>
-    </div>
+        <p style="margin-top: 0.5rem;">write an uppercase letter "{{letter.lower()}}"</p>
+      </div>
 
-          </div>
+      <div>
+        <form id="practice-form" action="practice" method="POST">
+          <input id="pixels" name="pixels" type="hidden" />
+          <input id="letter" name="letter" type="hidden" value="{{letter}}" />
+          <button type="button" class="btn" onclick="practiceAction()">check my answer</button>
+          <button type="button" class="btn" onclick="resetCanvas()">clear</button>
+        </form>
+      </div>
     </div>
-
+  </div>
 
   <script>
     $(document).ready(function() {
       startCanvas()
     })
   </script>
-
 {% endblock %}
