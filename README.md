@@ -68,7 +68,7 @@
    - Open the link provided in the terminal to access the website.
 
 ## Project Demo
-- **Demo Video**: [Baby Steps Demo Video](https://github.com/nanditavenkatesh/Baby-Steps/blob/frontendChanges/BabyStepsVideo.mp4)
+- **Demo Video**: [Baby Steps Demo Video](https://github.com/nanditavenkatesh/Baby-Steps/blob/master/BabyStepsVideo.mp4)
 - **GitHub Repository**: [Baby Steps GitHub Repository](https://github.com/nanditavenkatesh/Baby-Steps)
 
 ## Contributors
